@@ -69,7 +69,7 @@ class PromptToolkitSSHSession(asyncssh.SSHServerSession):
             # Should not happen.
             raise Exception("`_interact` called before `connection_made`.")
 
-        if hasattr(self._chan, 'set_line_mode') and self._chan._editor is not None:
+        if hasattr(self._chan, "set_line_mode") and self._chan._editor is not None:
             # Disable the line editing provided by asyncssh. Prompt_toolkit
             # provides the line editing.
             self._chan.set_line_mode(False)
